@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Rishu 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff5f8f, #ff9a9e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 45px 30px;
+    border-radius: 35px;
+    text-align: center;
+    width: 92%;
+    max-width: 460px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* BIG & CLEAR TEXT */
+h1 {
+    font-size: 40px;
+    color: #ff1e56;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* PHOTO STYLE */
+.photo-box {
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 5px solid #ff5f8f;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BUTTONS */
+button {
+    padding: 18px 38px;
+    font-size: 26px;
+    border: none;
+    border-radius: 40px;
+    margin: 12px;
+    cursor: pointer;
+}
+
+#yes {
+    background: #ff1e56;
+    color: white;
+}
+
+#no {
+    background: #ccc;
+    position: absolute;
+}
+
+#message {
+    display: none;
+    font-size: 26px;
+    color: #ff1e56;
+    margin-top: 25px;
+    line-height: 1.4;
+}
+
+#audioBox {
+    display: none;
+    margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Hey Rishu 💖</h1>
+    <p>Will you be my Valentine? 🌹</p>
+
+    <!-- PHOTO (I will update this after you send photo) -->
+    <div class="photo-box">
+        <img src="us.jpg" alt="Our Photo">
+    </div>
+
+    <button id="yes" onclick="showMsg()">Yes 😍</button>
+    <button id="no" ontouchstart="moveNo()">No 🙈</button>
+
+    <div id="message">
+        Yayyy! 💕<br>
+        You & Me = Forever ✨<br>
+        Happy Valentine’s Day 🌹
+    </div>
+
+    <!-- MUSIC -->
+    <div id="audioBox">
+        <p style="font-size:18px;">🎵 Press play for our song</p>
+        <audio controls loop>
+            <source src="romantic.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+<script>
+function moveNo() {
+    const no = document.getElementById("no");
+    no.style.left = Math.random() * (window.innerWidth - 150) + "px";
+    no.style.top  = Math.random() * (window.innerHeight - 100) + "px";
+}
+
+function showMsg() {
+    document.getElementById("message").style.display = "block";
+    document.getElementById("audioBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>
